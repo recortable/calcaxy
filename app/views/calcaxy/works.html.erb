@@ -9,10 +9,10 @@
     <div class="file">
       <div class="thumb"><%= thumb_of card, :thumb %> </div>
       <%  if (card.meta(:link) != nil) %>
-        <div class="info"><%= link_to image_tag('xy/pdf.gif'), card.public_file(:pdf) %></div>
-        <div class="info last"><%= link_to image_tag('xy/www.gif'), card.meta(:link) %></div>
+        <div class="info"><%= link_to image_tag('pdf.gif'), card.public_file(:pdf) %></div>
+        <div class="info last"><%= link_to image_tag('www.gif'), card.meta(:link) %></div>
       <% elsif card.attachment(:pdf) %>
-        <div class="info last"><%= link_to image_tag('xy/pdf.gif'), card.public_file(:pdf) %></div>
+        <div class="info last"><%= link_to image_tag('pdf.gif'), card.public_file(:pdf) %></div>
       <% end %>
     </div>
   <% end -%>

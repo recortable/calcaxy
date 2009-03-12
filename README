@@ -5,3 +5,5 @@ To decrypt: gpg myfile.gpg
 script/plugin install git://github.com/adamwiggins/yaml_db.git
 script/plugin install git://github.com/rails/acts_as_list.git
 script/plugin install git://github.com/rails/acts_as_tree.git
+script/plugin install git://github.com/technoweenie/attachment_fu.git
+script/plugin install git://github.com/mislav/will_paginate.git

@@ -7,4 +7,4 @@ db/*.sqlite3
 db/data/*.yml
 db/data/*.gz
 db/data.yml
-
+public/files

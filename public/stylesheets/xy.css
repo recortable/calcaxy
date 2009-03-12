@@ -1,0 +1,117 @@
+/*
+Copyright (c) 2007, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.2.0
+*/
+
+/*reset.css*/
+body,div,dl,dt,dd,ol,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}caption,th {text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym {border:0;}
+/*fonts.css*/
+body{font:13px arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}
+table {font-size:inherit;font:100%;}
+select, input, textarea {font:99% arial,helvetica,clean,sans-serif;}
+pre, code {font:115% monospace;*font-size:100%;} 
+body  {line-height:1.22em; letter-spacing: 0.17em;}
+
+.no_spam {display:none;}
+.spacer {clear: both;font-size: 0.1%;height: 0;	width: 0;}
+
+body {background-color: #E2E338; font-size: 70%;}
+a {text-decoration : none;}
+a:hover {text-decoration: underline;}
+
+#container {width: 982px; margin: 2em auto;}
+.test {display: none;}
+.test .box {width: 125px; height: 20px; background-color: gray; margin-right: 15px; float: left; border: 0;}
+
+
+#header {height: 100px; border: 1px solid #E2E338;}
+#header td {vertical-align: middle;}
+#logo { display: block; width: 125px; height: 49px;
+  background: url('/images/calclogo.gif') no-repeat center left;}
+  /* margin: 42px 6em 2em 127px; */
+#calc_name { position: static; height: 1em;  background-color: #CBCD33; padding: 0.2em 1em 0.4em 1em;
+        color: white; border: 1px dotted white; width: 790px;  letter-spacing: 1em; margin-top: 10px;}
+#mail { height: 21px; width: 30px; float: right; margin-top: 10px; margin-left: 13px;
+  background: url('/images/mailicon.gif') no-repeat center right;}
+#page {border-left: 1px solid black; border-bottom: 1px solid black; border-right: 1px solid black;
+  background-color: #EFF0F1;}
+
+#tabs {clear: both; height: 30px;}
+#tabs a, #tabs div.tab { width: 125px; height: 23px; display: block; float: left; text-align: center;
+  color: #89898A; padding-top: 7px; border-bottom: 1px solid black;}
+#tabs div.space {width: 15px; height: 30px; float: left; border-bottom: 1px solid black;}
+#tabs a.active { height: 22px; background-color: #EFF0F1; border-left: 1px solid black; border-top: 1px solid black;
+  border-right: 1px solid black; border-bottom: 1px solid #EFF0F1;  color: black;}
+
+/* COMMON */
+.main {width: 840px; margin-left: 140px; padding-top: 60px;}
+.main h1 {display: block; font-size: 150%;}
+.main p {margin-top: 0.5em; margin-bottom: 1em; line-height: 1.7em; }
+
+
+.selector {display: block; float: left; margin-left: -1px; padding: 0; width: 125px;
+      background-color: #EFF0F1;border-bottom: 1px solid black;}
+.selector  li { border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;
+    list-style: none; text-align: center;}
+.selector li a {display: block; padding: 4px 5px; color: black;}
+.selector li a:hover {background-color: #E3E4E5; text-decoration: none;}
+.selector li .active {display: block; padding: 4px 5px; background-color: #E2E338; margin-left: -1px;
+    text-align: left;}
+.selector li .active .head {text-align: center;}
+.selector li .active ul {margin: 0; padding: 0; width: 110px; background-color: #E2E338; }
+.selector li .active ul li {border: 0;}
+
+
+/* HOME */
+#calc_form {text-align: center; font-size: 110%; }
+#define-calc {width: 683px; margin-left: 15px; padding: 0.2em; background-color: #E3E4E5;
+  border: 1px dotted black; font-weight: bold; margin: 20px auto;}
+#define-calc input[type=text] {border: 0; background-color: #E3E4E5; width: 120px; font-weight: normal;}
+#define-calc input.focused {background-color: white;}
+#define-calc input:focus {background-color: white;}
+#updates {margin: 0 0 100px 139px;}
+#updates h1 {color: #8D8E22; margin: 1em 0;}
+#updates .column {width: 10em; float: left;}
+.home_image {padding: 50px 5px; text-align: center;}
+#calc_form li {letter-spacing: 0.8em; margin: 0.2em; list-style: none;}
+#calc_form li strong {font-weight: bold;}
+
+/* FILES */
+.files {}
+.files .file {width: 195px; height: 130px; float: left; background-color: #EFF0F1; margin-right: 15px;
+  margin-bottom: 15px;}
+.files .file .thumb {width: 193px; height: 117px; background-color: white; border: 1px solid #DDDE7A; overflow: hidden;}
+.files .file .info {width: 23px; height: 14px; float: left; font-size: 8px; background-color: white;
+  border-left: 1px solid #DDDE7A; border-bottom: 1px solid #DDDE7A; text-align: center;}
+.files .file .info.last {border-right: 1px solid #DDDE7A;}
+#file_preview {position: absolute; left: 10px; top: 10px; width: 1000px; height: 700px; margin: 1em 0;
+  border: 1px solid white; display: none; z-index: 1000; overflow: hidden; background-color: white;
+  margin-bottom: 10px;}
+
+/* BOOCS */
+.boocs {}
+.boocs .booc {margin-bottom: 15px;}
+.boocs .booc h1 {display: block; font-size: 130%; letter-spacing: 0em; color: #9C9E09;}
+.boocs .booc .image {width: 825px; height: 30px; background-color: #E3E4E5; margin-top: 10px;}
+.boocs .booc .date {width: 825px; color: #900; margin-top: 5px; margin-bottom: 5px;}
+.boocs .booc .body {width: 405px; float: left; line-height: 1.5em; overflow: hidden;}
+.boocs .booc .body p {margin-top: 0.5em; margin-bottom: 1em;}
+.boocs .booc .responses {width: 405px; margin-left: 15px; float: left; font-family: monospace;
+  font-size: 120%;}
+
+.boocs .booc .responses .error {border-color: #c00;}
+.boocs .booc input[type=text] {background-color: #E3E4E5; border: 1px dotted black;}
+.boocs .booc .responses textarea {width: 403px; height: 100px; margin: 5px 0;
+  background-color: #E3E4E5; border: 1px dotted black;}
+.boocs .booc .responses .response {margin-top: 10px; border-bottom: 1px solid black;}
+.boocs .booc .responses .response label {font-weight: bolder;}
+.boocs .booc .responses h6 {color: black; font-size: 130%;}
+.boocs .booc strong {font-weight: bold;}
+/* TEXTILE */
+.textile strong { font-weight: bold;  }
+.textile { padding: 40px 0 40px 125px;  width: 465px; }
+.textile h1 {color: #9C9E09; font-size: 120%; font-style: italic; margin-bottom: 10px;}
+.textile h2 {color: #9C9E09; font-weight: bold; font-size: 130%; margin: 10px 0 30px 0;}
+.textile h3 {color: black; font-size: 120%; font-weight: bold; margin-top: 10px;}
