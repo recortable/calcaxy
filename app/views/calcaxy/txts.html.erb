@@ -1,0 +1,19 @@
+
+<h1>&nbsp;</h1>
+
+<ul class="selector">
+  <% for text in @menu -%>
+    <li>
+
+      <%  if text.id == @page.id -%>
+        <div class="active"><div class="head"><%= text.title %></div></div>
+      <% else -%>
+        <%= link_to text.title, :id => text.id  %>
+      <% end  -%>
+    </li>
+  <% end -%>
+</ul>
+
+<div class="main textile">
+  <%= redcloth @page.content %>
+</div>

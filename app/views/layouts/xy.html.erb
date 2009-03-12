@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="icon" href="images/xy/favicon.ico" type="image/x-icon"> 
+    <title>calc</title>
+    <%= javascript_include_tag 'apy/jquery-1.2.6.pack.js' %>
+    <%= stylesheet_link_tag 'xy/xy.css' %>
+    <%= yield :header %>
+
+  </head>
+  <body>
+    <div id="file_preview">&nbsp;</div>
+    <div id="container">
+      <table id="header"><tr>
+          <td><%= link_to ' ', {:action => 'index'}, :id => 'logo'  %></td>
+          <td><div id="calc_name"><%= @calc %></div></td>
+          <td><a id="mail" href="mailto: calcies@calcaxy.com"></a></td>
+        </tr>
+      </table>
+      <div id="tabs">
+        <%= link_to 'H O M E', {:action => 'home'}, :class => (params[:action] == 'home' ? 'active' : '') %>
+        <div class="space">&nbsp;</div>
+        <%= link_to 'B O O C', {:action => 'booc'}, :class => (params[:action] == 'booc' ? 'active' : '') %>
+        <div class="space">&nbsp;</div>
+        <%= link_to 'F I L E S', {:action => 'works'}, :class => (params[:action] == 'works' ? 'active' : '') %>
+        <div class="space">&nbsp;</div>
+        <!--
+<%= link_to 'C E L L', {:action => 'cell'}, :class => (params[:action] == 'cell' ? 'active' : '') %>
+        <div class="space">&nbsp;</div>
+-->
+<%= link_to 'B I O B I B L I O', {:action => 'biobiblio'}, :class => (params[:action] == 'biobiblio' ? 'active' : '') %>
+        <div class="space">&nbsp;</div>
+        <%= link_to 'T X T \' S', {:action => 'txts'}, :class => (params[:action] == 'txts' ? 'active' : '') %>
+        <div class="space">&nbsp;</div>
+        <div class="tab">&nbsp;</div>
+        <div class="space">&nbsp;</div>
+
+        <div class="tab">&nbsp;</div>
+        <div class="space">&nbsp;</div>
+
+      </div>
+      <div id="page">
+
+        <div class="test">
+          <% for n in 1..7  %>
+            <div class="box">col</div>
+          <% end %>
+        </div>
+
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
