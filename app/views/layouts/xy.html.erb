@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> 
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <title>calc</title>
-    <%= javascript_include_tag 'admin/jquery-1.2.6.pack.js' %>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
     <%= stylesheet_link_tag 'xy.css' %>
     <%= yield :header %>
 
@@ -15,7 +15,7 @@
       <table id="header"><tr>
           <td><%= link_to ' ', {:action => 'index'}, :id => 'logo'  %></td>
           <td><div id="calc_name"><%= @calc %></div></td>
-          <td><a id="mail" href="mailto: calcies@calcaxy.com"></a></td>
+          <td><a id="mail" href="mailto:calcies@calcaxy.com"></a></td>
         </tr>
       </table>
       <div id="tabs">
@@ -25,11 +25,7 @@
         <div class="space">&nbsp;</div>
         <%= link_to 'F I L E S', {:action => 'works'}, :class => (params[:action] == 'works' ? 'active' : '') %>
         <div class="space">&nbsp;</div>
-        <!--
-<%= link_to 'C E L L', {:action => 'cell'}, :class => (params[:action] == 'cell' ? 'active' : '') %>
-        <div class="space">&nbsp;</div>
--->
-<%= link_to 'B I O B I B L I O', {:action => 'biobiblio'}, :class => (params[:action] == 'biobiblio' ? 'active' : '') %>
+        <%= link_to 'B I O B I B L I O', {:action => 'biobiblio'}, :class => (params[:action] == 'biobiblio' ? 'active' : '') %>
         <div class="space">&nbsp;</div>
         <%= link_to 'T X T \' S', {:action => 'txts'}, :class => (params[:action] == 'txts' ? 'active' : '') %>
         <div class="space">&nbsp;</div>
@@ -41,15 +37,9 @@
 
       </div>
       <div id="page">
-
-        <div class="test">
-          <% for n in 1..7  %>
-            <div class="box">col</div>
-          <% end %>
-        </div>
-
         <%= yield %>
       </div>
     </div>
+    <%= render :partial => '/layouts/ga' %>
   </body>
 </html>

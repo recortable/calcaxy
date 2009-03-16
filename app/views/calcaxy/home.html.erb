@@ -4,33 +4,30 @@
   <%= image_tag @home.public_file(:home) if @home.attachment(:home) %>
 </div>
 
-<div>
-  <div id="calc_form">
-    <% form_tag :action => 'home' do %>
-      <div id="define-calc">
-        <%= submit_tag 'c a l c = ' %>
-        c<%= text_field_tag :cword %> a<%= text_field_tag :aword %>
-        l<%= text_field_tag :lword %> c<%= text_field_tag :ccword %>
 
-      </div>
-    <% end %>
-    <ul>
-      <% for @meta in @home.metas.reverse %>
-        <li><%= as_calc @meta.value %></li>
-      <% end %>
-    </ul>
-  </div>
-
-  <div id="updates" style="display:none;">
-    <h1>latest updates / uploads / boocings &gt;</h1>
-    <div class="column">
-      <h1>booc</h1>
-    </div>
-    <div class="column">
-      <h1>files</h1>
-    </div>
-  </div>
+<div class="updates">
+  <label>LAST UPDATES:</label>
+  <% @updates.each do |update| %>
+    <%= link_to update[:title], update[:path] %>
+  <% end %>
 </div>
+
+<div id="calc_form">
+  <% form_tag :action => 'home' do %>
+    <div id="define-calc">
+      <%= submit_tag 'c a l c = ' %>
+      c<%= text_field_tag :cword %> a<%= text_field_tag :aword %>
+      l<%= text_field_tag :lword %> c<%= text_field_tag :ccword %>
+
+    </div>
+  <% end %>
+  <ul>
+    <% for @meta in @home.metas.reverse %>
+      <li><%= as_calc @meta.value %></li>
+    <% end %>
+  </ul>
+</div>
+
 
 <script type="text/javascript">
   $(function() {

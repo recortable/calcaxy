@@ -9,7 +9,7 @@
       <% if year == @year -%>
         <div class="active">
           <div class="head"><%= year %></div>
-          <ul><% for booc in @boocs -%>
+          <ul><% @boocs.each do |booc| -%>
               <li><%= link_to booc.meta(:year), "#booc#{booc.id}" %></li>
           <% end -%></ul>
         </div>
@@ -21,26 +21,12 @@
 </ul>
 
 <div class="boocs main">
-  <% for booc in @boocs %>
+  <% @boocs.each do |booc| %>
     <div class="booc">
       <h1><a name="booc<%= booc.id %>" href="#selector"><%= booc.title %></a></h1>
       <div class="date"><%= booc.meta(:year) %></div>
       <div class="body"><%= redcloth booc.content %></div>
-      <div class="responses">
-        <h6>Responses</h6>
-        <% form_for :response, :url => {:action => 'booc_response', :id => booc.id} do |f| %>
-          <div class="no_spam">required:<input type="text" name="name" value="" /></div>
-          <label>name:</label><input type="text" name="response[title]" class="required" /><br/>
-          <textarea cols="40" class="required" name="response[content]" rows="20"></textarea>
-          <br/>
-          <%= f.submit 'respond' %>
-        <% end %>
-        <% for comment in booc.children -%>
-          <div class="response">
-            <label><%= h comment.title %></label> said: <%= h comment.content %>
-          </div>
-        <% end -%>
-      </div>
+ 
       <%= clear %>
       <a href="#selector">back to top</a>
       <div class="image">
