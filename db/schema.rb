@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 4) do
     t.integer  "parent_id"
     t.string   "title",                    :null => false
     t.integer  "position"
-    t.integer  "depth",      :limit => 5
+    t.integer  "depth",      :limit => 8
     t.string   "state",      :limit => 12
     t.string   "mime",       :limit => 12
     t.text     "content"
