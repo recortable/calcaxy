@@ -99,8 +99,8 @@ a:hover {text-decoration: underline;}
 .boocs .booc h1 {display: block; font-size: 130%; letter-spacing: 0em; color: #9C9E09;}
 .boocs .booc .image {width: 825px; height: 30px; background-color: #E3E4E5; margin-top: 10px;}
 .boocs .booc .date {width: 825px; color: #900; margin-top: 5px; margin-bottom: 5px;}
-.boocs .booc .body {width: 405px; float: left; line-height: 1.5em; overflow: hidden;}
-.boocs .booc .body p {margin-top: 0.5em; margin-bottom: 1em;}
+.boocs .booc .body {/*width: 405px; */float: left; line-height: 1.5em; overflow: hidden;}
+.boocs .booc .body p {display: block; width: 405px; margin-top: 0.5em; margin-bottom: 1em;}
 .boocs .booc .responses {width: 405px; margin-left: 15px; float: left; font-family: monospace;
   font-size: 120%;}
 
