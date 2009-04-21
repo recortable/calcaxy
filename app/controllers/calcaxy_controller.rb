@@ -74,6 +74,11 @@ class CalcaxyController < ApplicationController
     menu(PAGE_TXT)
   end
 
+  def front
+    @images = Attachment.find(:all, :conditions => {:width => '683', :height => '304'},
+      :order => 'created_at DESC')
+  end
+
   private
   def menu(root_id)
     id = params[:id]
