@@ -4,6 +4,7 @@ class CreateMetas < ActiveRecord::Migration
       t.integer "page_id"
       t.string "name"
       t.string "value"
+      t.timestamps
     end
   end
 

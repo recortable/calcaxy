@@ -26,6 +26,7 @@ class CalcaxyController < ApplicationController
       redirect_to :action => 'home'
     end
     @home = Calcaxy.home
+    @metas = Calcaxy.metas
     @updates = Updates.new
   end
 

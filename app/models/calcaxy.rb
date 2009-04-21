@@ -12,6 +12,10 @@ class Calcaxy
     Page.find(1)
   end
 
+  def self.metas
+    Page.find(1).metas(:order => 'id')
+  end
+
   def self.valid_year?(string)
     year = string.to_i
     year < MIN_YEAR || year > MAX_YEAR

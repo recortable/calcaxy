@@ -22,8 +22,8 @@
     </div>
   <% end %>
   <ul>
-    <% for @meta in @home.metas.reverse %>
-      <li><%= as_calc @meta.value %></li>
+    <% @metas.each do |meta| %>
+      <li><%= as_calc meta.value %> </li>
     <% end %>
   </ul>
 </div>
