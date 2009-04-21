@@ -1,0 +1,3 @@
+[submodule "vendor/plugins/pagify"]
+	path = vendor/plugins/pagify
+	url = git@github.com:danigb/pagify.git
