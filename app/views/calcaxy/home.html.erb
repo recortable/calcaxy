@@ -1,7 +1,7 @@
 
 
 <div class="home_image">
-  <%= image_tag @home.public_file(:home) if @home.attachment(:home) %>
+  <%= link_to(image_tag(@home.public_file(:home)), :action => 'homeology') if @home.attachment(:home) %>
 </div>
 
 

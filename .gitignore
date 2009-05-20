@@ -2,6 +2,8 @@ log
 tmp
 nbproject
 config/database.yml
+config/git.yml
+config/pagify.yml
 db/*.sqlite3
 db/data/*.yml
 db/data/*.gz

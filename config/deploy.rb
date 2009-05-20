@@ -4,6 +4,7 @@
 
 
 require 'yaml'
+GIT = YAML.load_file("#{File.dirname(__FILE__)}/git.yml")
 
 default_run_options[:pty] = true
 set :application, "calcaxy"
@@ -16,7 +17,9 @@ set :repository,  "git@github.com:danigb/calcaxy.git"
 set :branch, "master"
 set :deploy_via, :remote_cache
 set :scm_verbose, true
-# set :git_shallow_clone, 1 #set :git_enable_submodules, 1
+# set :git_shallow_clone, 1
+# set :git_enable_submodules, 1
+set :scm_passphrase, GIT['password']
 
 role :app, "calclab.com"
 role :web, "calclab.com"

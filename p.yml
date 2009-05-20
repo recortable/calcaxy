@@ -2,10 +2,10 @@ name: xy
 files_path: public/files/xymedia
 user:
     name: simple
-    pass: password here
+    pass: xyxyxy
 admin:
     name: admin
-    pass: password here
+    pass: xyxyxy
 
 
 

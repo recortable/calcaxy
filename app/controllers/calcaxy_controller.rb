@@ -19,6 +19,11 @@ class CalcaxyController < ApplicationController
     redirect_to :action => 'home'
   end
 
+  def homeology
+    home = Calcaxy.home
+    @attachments = home.attachments
+  end
+
   def home
     if params[:cword]
       @calc = "c#{params[:cword]} a#{params[:aword]} l#{params[:lword]} c#{params[:ccword]}"
