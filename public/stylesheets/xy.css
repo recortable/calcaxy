@@ -71,12 +71,15 @@ a:hover {text-decoration: underline;}
 #define-calc input[type=text] {border: 0; background-color: #E3E4E5; width: 120px; font-weight: normal;}
 #define-calc input.focused {background-color: white;}
 #define-calc input:focus {background-color: white;}
-#updates {margin: 0 0 100px 139px;}
-#updates h1 {color: #8D8E22; margin: 1em 0;}
-#updates .column {width: 10em; float: left;}
+.updates {margin: 0 0 100px 130px; overflow: hidden;}
+.updates a, .updates label {display: block; float: left; width: 170px; margin: 0; padding: 0;
+    text-align: center;}
+.updates label {color: #7F2622; }
+.updates a {color: #848F17; }
 .home_image {padding: 50px 5px; text-align: center;}
 #calc_form li {letter-spacing: 0.8em; margin: 0.2em; list-style: none;}
 #calc_form li strong {font-weight: bold;}
+
 
 /* FILES */
 .files {}
@@ -96,8 +99,8 @@ a:hover {text-decoration: underline;}
 .boocs .booc h1 {display: block; font-size: 130%; letter-spacing: 0em; color: #9C9E09;}
 .boocs .booc .image {width: 825px; height: 30px; background-color: #E3E4E5; margin-top: 10px;}
 .boocs .booc .date {width: 825px; color: #900; margin-top: 5px; margin-bottom: 5px;}
-.boocs .booc .body {width: 405px; float: left; line-height: 1.5em; overflow: hidden;}
-.boocs .booc .body p {margin-top: 0.5em; margin-bottom: 1em;}
+.boocs .booc .body {/*width: 405px; */float: left; line-height: 1.5em; overflow: hidden;}
+.boocs .booc .body p {display: block; width: 405px; margin-top: 0.5em; margin-bottom: 1em;}
 .boocs .booc .responses {width: 405px; margin-left: 15px; float: left; font-family: monospace;
   font-size: 120%;}
 

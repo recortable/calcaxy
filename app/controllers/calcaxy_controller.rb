@@ -20,25 +20,24 @@ class CalcaxyController < ApplicationController
   end
 
   def home
-    if (params[:cword])
+    if params[:cword]
       @calc = "c#{params[:cword]} a#{params[:aword]} l#{params[:lword]} c#{params[:ccword]}"
       Meta.new(:page_id => 1, :name => 'calc', :value => @calc).save
       redirect_to :action => 'home'
     end
-    @home = Page.find(1)
+    @home = Calcaxy.home
+    @metas = Calcaxy.metas
+    @updates = Updates.new
   end
 
   def booc
-    @year = params[:year].to_i
-    if (@year < MIN_YEAR || @year > MAX_YEAR)
+    if Calcaxy.valid_year? params[:year]
       redirect_to :action => 'booc', :year => '2008'
     else
-      @years = (MIN_YEAR..MAX_YEAR).to_a.reverse!
-      @years.delete 2006
-      @parent = Page.find_by_title(@year, :conditions => ['parent_id = ?', PAGE_BOOC])
-      @boocs = @parent.rev_children
-      @comment = Page.new
-      #@boocs = Page.find_all_by_mime('booc')
+       @year = params[:year].to_i
+       @years = Calcaxy.booc_years
+       @parent = Calcaxy.booc_parent(@year)
+       @boocs = @parent.rev_children
     end
   end
 
@@ -57,6 +56,10 @@ class CalcaxyController < ApplicationController
   
   def works
     @files = Page.find_all_by_mime('file', :order => 'position')
+    if params[:show]
+      file = Page.find_by_id(params[:show])
+      @show = file.attachment(:main).public_filename
+    end
   end
 
   def cell
@@ -69,6 +72,11 @@ class CalcaxyController < ApplicationController
 
   def txts
     menu(PAGE_TXT)
+  end
+
+  def front
+    @images = Attachment.find(:all, :conditions => {:width => '683', :height => '304'},
+      :order => 'created_at DESC')
   end
 
   private

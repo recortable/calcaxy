@@ -66,4 +66,8 @@
       });
     });
   }
+
+<% if @show %>
+  $(function() {show_image('<%= @show %>');});
+<% end %>
 </script>
