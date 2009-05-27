@@ -25,8 +25,8 @@
     <div class="booc">
       <h1><a name="booc<%= booc.id %>" href="#selector"><%= booc.title %></a></h1>
       <div class="date"><%= booc.meta(:year) %></div>
-      <div class="body"><%= redcloth booc.content %></div>
- 
+      <div class="body"><%= supercloth booc.content %></div>
+
       <%= clear %>
       <a href="#selector">back to top</a>
       <div class="image">
@@ -44,18 +44,32 @@
 <br/><br/><br/>
 
 <script type="text/javascript">
-  String.prototype.trim = function() { return this.replace(/^s+|s+$/g, ""); };
-  $("form").submit(function() {
-    var completed = true;
-    $(this).find(".required").each(function() {
-      if ($.trim(this.value) == "") {
-        completed = false;
-        $(this).addClass("error");
-      } else {
-        $(this).removeClass("error");
-        this.value = $.trim(this.value);
+  (function($) {
+    String.prototype.trim = function() { return this.replace(/^s+|s+$/g, ""); };
+    $("form").submit(function() {
+      var completed = true;
+      $(this).find(".required").each(function() {
+        if ($.trim(this.value) == "") {
+          completed = false;
+          $(this).addClass("error");
+        } else {
+          $(this).removeClass("error");
+          this.value = $.trim(this.value);
+        }
+      });
+      return completed;
+    });
+
+    var matcher = /^\/files\/xymedia/;
+    $("a").each(function() {
+      var href = $(this).attr('href');
+      if (matcher.test(href)) {
+        $(this).click(function(event) {
+          alert("epa!");
+          event.stopPropagation();
+          return false;
+        });
       }
     });
-    return completed;
-  });
+  })(jQuery);
 </script>
