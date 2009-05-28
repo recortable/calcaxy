@@ -1,4 +1,8 @@
 
+
+<div id="files_browser">
+</div>
+
 <h1>&nbsp;</h1>
 
 <a name="selector">&nbsp;</a>
@@ -64,11 +68,8 @@
     $("a").each(function() {
       var href = $(this).attr('href');
       if (matcher.test(href)) {
-        $(this).click(function(event) {
-          alert("epa!");
-          event.stopPropagation();
-          return false;
-        });
+        //$(this).click(function(event) {               });
+        $(this).fancybox();
       }
     });
   })(jQuery);
