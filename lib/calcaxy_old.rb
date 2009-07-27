@@ -14,7 +14,7 @@ class CalcaxyOld
       path = env['PATH_INFO']
       file = File.join(@path, path)
       if File.exists?(file)
-        redirect_url = "/calcaxy_old/#{path}"
+        redirect_url = "/archives/#{path}"
         return [301, {"Location" => redirect_url, "Content-Type" => "text/html"}, "Redirecting to: #{redirect_url}"]
 #        content = File.read(file)
 #        length = "".respond_to?(:bytesize) ? content.bytesize.to_s : content.size.to_s

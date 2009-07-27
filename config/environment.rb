@@ -7,7 +7,7 @@ RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-  config.middleware.use "CalcaxyOld", "#{RAILS_ROOT}/public/calcaxy_old"
+  config.middleware.use "CalcaxyOld", "#{RAILS_ROOT}/public/archives"
   config.time_zone = 'UTC'
 
   config.gem "RedCloth", :lib => 'redcloth',  :source => "http://code.whytheluckystiff.net/"

@@ -9,4 +9,5 @@ db/data/*.yml
 db/data/*.gz
 db/data.yml
 public/files/*
-public/calcaxy_old
+public/archives
+
