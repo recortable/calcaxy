@@ -11,11 +11,14 @@ class CalcaxyOld
   def call(env)
     status, header, response = @app.call(env)
     if status == 404
-      file = File.join(@path, env['PATH_INFO'])
+      path = env['PATH_INFO']
+      file = File.join(@path, path)
       if File.exists?(file)
-        content = File.read(file)
-        length = "".respond_to?(:bytesize) ? content.bytesize.to_s : content.size.to_s
-        [503, {'Content-Type' => 'text/html', 'Content-Length' => length}, [content]]
+        redirect_url = "/calcaxy_old/#{path}"
+        return [301, {"Location" => redirect_url, "Content-Type" => "text/html"}, "Redirecting to: #{redirect_url}"]
+#        content = File.read(file)
+#        length = "".respond_to?(:bytesize) ? content.bytesize.to_s : content.size.to_s
+#        [503, {'Content-Type' => 'text/html', 'Content-Length' => length}, [content]]
       else
         [status, header, response]
       end
