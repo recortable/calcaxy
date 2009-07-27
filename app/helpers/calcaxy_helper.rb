@@ -9,7 +9,7 @@ module CalcaxyHelper
     if page.attachment name
       image = image_tag page.attachment(name).public_filename, :size => "193x117"
       if page.attachment(:main)
-        link_to_function image, "show_image('#{page.attachment(:main).public_filename}');"
+        link_to image, page.attachment(:main).public_filename, :class => 'thumbnail'
       else
         image
       end
