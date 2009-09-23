@@ -26,6 +26,8 @@ a:hover {text-decoration: underline;}
 .test .box {width: 125px; height: 20px; background-color: gray; margin-right: 15px; float: left; border: 0;}
 
 
+#calclab {float: right; margin-right: -19px;}
+
 #header {height: 100px; border: 1px solid #E2E338;}
 #header td {vertical-align: middle;}
 #logo { display: block; width: 125px; height: 49px;
