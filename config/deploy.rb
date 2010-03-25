@@ -13,7 +13,7 @@ set :user, "deploy"
 set :use_sudo, false
 
 set :scm, "git"
-set :repository,  "git@github.com:danigb/calcaxy.git"
+set :repository,  "git://github.com/danigb/calcaxy.git"
 set :branch, "master"
 set :deploy_via, :remote_cache
 set :scm_verbose, true
