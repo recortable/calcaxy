@@ -8,8 +8,8 @@ GIT = YAML.load_file("#{File.dirname(__FILE__)}/git.yml")
 
 default_run_options[:pty] = true
 set :application, "calcaxy"
-set :deploy_to, "/home/dani/deploy/#{application}"
-set :user, "dani"
+set :deploy_to, "/home/deploy/#{application}"
+set :user, "deploy"
 set :use_sudo, false
 
 set :scm, "git"
