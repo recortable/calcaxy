@@ -21,7 +21,7 @@ class CalcaxyController < ApplicationController
 
   def homeology
     home = Calcaxy.home
-    @attachments = home.attachments
+    @attachments = Attachment.find(:all, :conditions => {:page_id => home.id}, :order => 'id DESC')
   end
 
   def home
