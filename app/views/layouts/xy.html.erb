@@ -21,25 +21,27 @@
           <td><a id="mail" href="mailto:calcies@calcaxy.com"></a></td>
         </tr>
       </table>
+
       <div id="tabs">
-        <%= link_to 'H O M E', {:action => 'home'}, :class => (params[:action] == 'home' ? 'active' : '') %>
+        <%= link_to 'HOME', {:action => 'home'}, :class => (params[:action] == 'home' ? 'active' : '') %>
         <div class="space">&nbsp;</div>
-        <%= link_to 'B O O C', {:action => 'booc'}, :class => (params[:action] == 'booc' ? 'active' : '') %>
+        <%= link_to 'BOOC', {:action => 'booc'}, :class => (params[:action] == 'booc' ? 'active' : '') %>
         <div class="space">&nbsp;</div>
-        <%= link_to 'F I L E S', {:action => 'works'}, :class => (params[:action] == 'works' ? 'active' : '') %>
+        <%= link_to 'FILES', {:action => 'works'}, :class => (params[:action] == 'works' ? 'active' : '') %>
         <div class="space">&nbsp;</div>
-        <%= link_to 'B I O B I B L I O', {:action => 'biobiblio'}, :class => (params[:action] == 'biobiblio' ? 'active' : '') %>
+        <%= link_to 'PIXCELL', '/images/pix_cell.png', :popup => true %>
         <div class="space">&nbsp;</div>
-        <%= link_to 'T X T \' S', {:action => 'txts'}, :class => (params[:action] == 'txts' ? 'active' : '') %>
+        <%= link_to 'BIOBIBLIO', {:action => 'biobiblio'}, :class => (params[:action] == 'biobiblio' ? 'active' : '') %>
         <div class="space">&nbsp;</div>
-        <div class="tab">&nbsp;</div>
+        <%= link_to 'TXT\'S', {:action => 'txts'}, :class => (params[:action] == 'txts' ? 'active' : '') %>
         <div class="space">&nbsp;</div>
 
         <div class="tab">&nbsp;</div>
         <div class="space">&nbsp;</div>
 
       </div>
-      <a id="calclab" href="http://calclab.com"><img  src="/images/calcaxy_calclab.gif" /></a>
+      <img id="modern_browsers" src="/images/worksinall.png" alt="ie sucks" />
+      <a id="calclab" href="http://calclab.com"><img  alt="looking for calclab?" src="/images/calcaxy_calclab.gif" /></a>
       <div id="page">
         <%= yield %>
       </div>
