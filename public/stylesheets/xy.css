@@ -82,6 +82,7 @@ a:hover {text-decoration: underline;}
 .home_image {padding: 50px 5px; text-align: center;}
 #calc_form li {letter-spacing: 0.8em; margin: 0.2em; list-style: none;}
 #calc_form li strong {font-weight: bold;}
+#calc_form form > input {display:none;}
 
 
 /* FILES */

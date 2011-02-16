@@ -10,4 +10,5 @@ db/data/*.gz
 db/data.yml
 public/files/*
 public/archives
+.idea
 

@@ -25,9 +25,9 @@ class CalcaxyController < ApplicationController
   end
 
   def home
-    if params[:cword]
+    if params[:email].blank? and params[:cword].present?
       @calc = "c#{params[:cword]} a#{params[:aword]} l#{params[:lword]} c#{params[:ccword]}"
-      Meta.new(:page_id => 1, :name => 'calc', :value => @calc).save
+      Meta.new(:page_id => 1, :name => 'calc', :value => @calc).save unless @calc.match /http/
       redirect_to :action => 'home'
     end
     @home = Calcaxy.home

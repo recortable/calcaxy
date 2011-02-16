@@ -19,8 +19,8 @@
       <%= submit_tag 'c a l c = ' %>
       c<%= text_field_tag :cword %> a<%= text_field_tag :aword %>
       l<%= text_field_tag :lword %> c<%= text_field_tag :ccword %>
-
     </div>
+      <%= text_field_tag :email %>
   <% end %>
   <ul>
     <% @metas.each do |meta| %>
@@ -34,7 +34,7 @@
   $(function() {
     $("form").submit(function() {
       var completed = true;
-      $(this).find("input[type=text]").each(function() {
+      $(this).find("#define-calc input[type=text]").each(function() {
         if ($.trim(this.value) == '') {
           this.focus();
           completed = false;

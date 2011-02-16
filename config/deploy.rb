@@ -3,8 +3,6 @@
 # setup deploy: http://www.capify.org/getting-started/from-the-beginning/
 
 
-require 'yaml'
-GIT = YAML.load_file("#{File.dirname(__FILE__)}/git.yml")
 
 default_run_options[:pty] = true
 set :application, "calcaxy"
@@ -19,7 +17,6 @@ set :deploy_via, :remote_cache
 set :scm_verbose, true
 # set :git_shallow_clone, 1
 # set :git_enable_submodules, 1
-set :scm_passphrase, GIT['password']
 
 role :app, "calclab.com"
 role :web, "calclab.com"
@@ -68,10 +65,22 @@ namespace :mysql do
     `rm #{File.dirname(__FILE__)}/../backups/#{filename}`
     # delete file
   end
+
+  task :download, :roles => :db, :only => { :primary => true } do
+      filename = "#{application}.dump.sql"
+      file = "/tmp/#{filename}"
+      on_rollback { delete file }
+      db = YAML::load(ERB.new(IO.read(File.join(File.dirname(__FILE__), 'database.yml'))).result)
+      production = db['production']
+
+      pass_ops = !production['password'].nil? ? "--password=#{production['password']}" : ''
+      run "mysqldump -u #{production['username']} #{pass_ops} #{production['database']} > #{file}"  do |ch, stream, data|
+        puts data
+      end
+      get file, "tmp/#{filename}"
+      #`mysql -u root -p booka < tmp/#{filename}`
+      # delete file
+    end
 end
 
-desc "Backup the database before running migrations"
-task :before_migrate do
-  mysql
-end
 
