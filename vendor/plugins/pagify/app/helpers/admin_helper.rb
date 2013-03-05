@@ -1,5 +1,5 @@
 # encoding: utf-8
-require 'RedCloth'
+require 'redcloth'
 
 module AdminHelper
   include ActionView::Helpers::TagHelper
