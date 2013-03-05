@@ -6,9 +6,9 @@
 
 default_run_options[:pty] = true
 set :application, "calcaxy"
-set :deploy_to, "/root/#{application}"
-set :user, "root"
-set :use_sudo, true
+set :deploy_to, "/home/deployer/#{application}"
+set :user, "deployer"
+set :use_sudo, false
 
 set :scm, "git"
 set :repository,  "git://github.com/danigb/calcaxy.git"
