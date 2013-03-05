@@ -11,7 +11,7 @@ Rails::Initializer.run do |config|
   config.middleware.use "CalcaxyOld", "#{RAILS_ROOT}/public/archives"
   config.time_zone = 'UTC'
 
-  config.gem "RedCloth", :lib => 'redcloth',  :source => "http://code.whytheluckystiff.net/"
+  #config.gem "RedCloth", :lib => 'redcloth',  :source => "http://code.whytheluckystiff.net/"
 
 end
 
