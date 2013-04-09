@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Admin::PagesController < Admin::AdminController
   protect_from_forgery :only => [:create, :update, :destroy]
 
@@ -125,7 +126,6 @@ class Admin::PagesController < Admin::AdminController
   end
 
   def info
-    
   end
 
   private
