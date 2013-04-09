@@ -1,0 +1,3 @@
+module Admin::AttachmentsHelper
+
+end
