@@ -1,6 +1,7 @@
+# encoding: utf-8
 
 class Admin::MetasController < Admin::AdminController
-  
+
   # GET /metas GET /metas.xml
   def index
     @metas = @page.metas
@@ -39,7 +40,7 @@ class Admin::MetasController < Admin::AdminController
   # POST /metas POST /metas.xml
   def create
     @meta = Meta.new(params[:meta])
-    
+
     respond_to do |format|
       if @meta.save
         flash[:notice] = 'Metainformación añadida correctamente.'
@@ -78,5 +79,5 @@ class Admin::MetasController < Admin::AdminController
       format.xml  { head :ok }
     end
   end
-  
+
 end
